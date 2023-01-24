@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.products {
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem 0;
+  list-style: none;
+
+  .btn {
+    margin: 1rem;
+  }
+}

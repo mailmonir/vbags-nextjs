@@ -1,0 +1,45 @@
+@use "../abstracts/variables" as var;
+
+.scroll-top {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 4rem;
+  z-index: 100;
+  cursor: pointer;
+  color: var.$color-primary;
+  border: none;
+  outline: none;
+  background: white;
+
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  transition: all 0.3s;
+
+  &:hover {
+    color: var.$color-primary-dark;
+  }
+}
+
+.whats-app {
+  position: fixed;
+  left: 2rem;
+  bottom: 2rem;
+  font-size: 4rem;
+  width: 5rem;
+  height: 5rem;
+  color: #25d366;
+  border: none;
+  outline: none;
+  background-color: var.$color-white;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: #075e54;
+  }
+}

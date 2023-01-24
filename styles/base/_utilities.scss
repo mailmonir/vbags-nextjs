@@ -1,0 +1,41 @@
+@use "../abstracts/mixins" as mix;
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important;
+
+  @include mix.respond(md) {
+    margin-bottom: 3rem !important;
+  }
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important;
+
+  @include mix.respond(lg) {
+    margin-bottom: 5rem !important;
+  }
+}
+
+.u-margin-top-big {
+  margin-top: 8rem !important;
+}
+.u-margin-top-huge {
+  margin-top: 10rem !important;
+}
+
+.u-offset-x {
+  padding: 10rem 2rem;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}

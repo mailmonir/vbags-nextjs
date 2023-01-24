@@ -1,0 +1,230 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 3rem;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.5s;
+  // background-image: linear-gradient(
+  //   to right bottom,
+  //   rgba(var.$color-secondary, 0.9),
+  //   rgba(var.$color-secondary, 0.9)
+  // );
+}
+
+.logo,
+.logo-white {
+  width: 20rem;
+  height: auto;
+}
+
+.logo {
+  display: none;
+}
+
+.nav-wrapper {
+  padding: 5rem 0rem 2rem 0rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0px;
+  height: 100vh;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(var.$color-secondary, 1),
+    rgba(var.$color-secondary, 1)
+  );
+  box-shadow: 0 10px 20px rgba(var.$color-white, 0.4);
+  transition: width 0.4s ease-in-out;
+  overflow: hidden;
+
+  @include mix.respond(lg) {
+    position: unset;
+    height: unset;
+    width: unset;
+    left: unset;
+    top: unset;
+    background-image: unset;
+    box-shadow: unset;
+    padding: unset;
+  }
+
+  // .closebtn {
+  //   position: absolute;
+  //   top: 10px;
+  //   right: 20px;
+  //   font-size: 25px;
+  //   text-decoration: none;
+  //   color: var.$color-grey-200;
+  //   transition: all 0.3s;
+  //   &:hover {
+  //     color: var.$color-primary;
+  //   }
+
+  //   @include mix.respond(lg) {
+  //     display: none;
+  //   }
+  // }
+}
+
+.open {
+  width: 250px;
+  @include mix.respond(lg) {
+    width: unset;
+  }
+}
+
+.nav {
+  list-style: none;
+
+  @include mix.respond(lg) {
+    display: flex;
+  }
+
+  &__link {
+    &,
+    &:link,
+    &:visited {
+      text-decoration: none;
+      font-size: 1.8rem;
+      color: var.$color-grey-200;
+      font-weight: 500;
+      transition: all 0.3s;
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      display: block;
+
+      @include mix.respond(lg) {
+        padding: 1rem 2rem;
+      }
+    }
+
+    &:hover,
+    &:active {
+      color: var.$color-primary;
+    }
+  }
+
+  &__link.active {
+    color: var.$color-primary;
+  }
+
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: var.$color-grey-200;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    @include mix.respond(lg) {
+      display: none;
+    }
+  }
+}
+
+.rotate-bars {
+  .nav__icon {
+    background-color: transparent;
+  }
+
+  .nav__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  .nav__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
+
+.search {
+  display: none;
+  border: none;
+  font-size: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: var.$color-grey-200;
+
+  &:hover {
+    color: var.$color-primary;
+  }
+
+  @include mix.respond(lg) {
+    display: block;
+  }
+}
+
+.float-nav {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(var.$color-grey-100, 1),
+    rgba(var.$color-grey-100, 1)
+  );
+  box-shadow: 0 5px 10px rgba(var.$color-white, 0.3);
+
+  .nav__link,
+  .search {
+    color: var.$color-grey-200;
+    @include mix.respond(lg) {
+      color: var.$color-secondary;
+    }
+    &:hover {
+      color: var.$color-primary;
+    }
+  }
+
+  .nav__link.active {
+    color: var.$color-primary;
+  }
+
+  .nav__icon,
+  .nav__icon::before,
+  .nav__icon::after {
+    background-color: var.$color-secondary;
+  }
+
+  .rotate-bars .nav__icon {
+    background-color: transparent;
+  }
+
+  .logo {
+    display: block;
+  }
+
+  .logo-white {
+    display: none;
+  }
+}

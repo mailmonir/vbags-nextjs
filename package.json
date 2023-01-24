@@ -1,0 +1,33 @@
+{
+  "name": "victoria",
+  "version": "0.1.0 ",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H test.test",
+    "build": "next build",
+    "lint": "next lint",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.15.1",
+    "@hcaptcha/react-hcaptcha": "^1.4.4",
+    "@next/font": "13.1.1",
+    "@sendgrid/mail": "^7.7.0",
+    "dotenv": "^16.0.3",
+    "eslint": "8.30.0",
+    "eslint-config-next": "13.1.1",
+    "filterizr": "^2.2.4",
+    "isotope-layout": "^3.0.6",
+    "keen-slider": "^6.8.5",
+    "lightgallery": "^2.7.0",
+    "next": "13.1.1",
+    "nodemailer": "^6.9.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.42.1",
+    "react-icons": "^4.7.1"
+  },
+  "devDependencies": {
+    "sass": "^1.57.1"
+  }
+}

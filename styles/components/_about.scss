@@ -1,0 +1,64 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.about {
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+.story {
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(var.$color-black, 0.1);
+  background-color: rgba(var.$color-white, 0.6);
+  border-radius: 3px;
+  font-size: var.$default-font-size;
+  width: 100%;
+  padding: 4rem;
+  padding-left: 7rem;
+
+  @include mix.respond(md) {
+    transform: skewX(-12deg);
+    width: 75%;
+    padding: 6rem;
+    padding-left: 9rem;
+  }
+
+  &__text {
+    @include mix.respond(md) {
+      transform: skewX(12deg);
+    }
+  }
+}
+
+.story:nth-child(1) {
+  margin-bottom: 8rem;
+
+  @include mix.respond(md) {
+    margin-bottom: 10rem;
+  }
+}
+
+.profile {
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: 10rem;
+    }
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    @include mix.respond(lg) {
+      grid-template-columns: 3fr 5fr;
+    }
+  }
+  grid-gap: 4rem;
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .paragraph {
+    font-size: 1.8rem;
+  }
+}
