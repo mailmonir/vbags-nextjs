@@ -8,22 +8,17 @@ const IsoProducts = ({ products }) => {
     categoriesSet.add(product.productName);
   });
 
-  // init one ref to store the future isotope object
   const isotope = React.useRef();
-  // store the filter keyword in a state
   const [filterKey, setFilterKey] = React.useState("*");
 
-  //   initialize an Isotope object with configs
   React.useEffect(() => {
     isotope.current = new Isotope(".cards", {
       itemSelector: ".card",
       layoutMode: "fitRows",
     });
-    // cleanup
     return () => isotope.current.destroy();
   }, []);
 
-  //   handling filter key change
   React.useEffect(() => {
     filterKey === "*"
       ? isotope.current.arrange({ filter: `*` })

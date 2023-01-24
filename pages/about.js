@@ -1,14 +1,22 @@
 import Banner from "../components/banner";
 import Layout from "../components/layout";
 import Breadcrumb from "../components/breadcrumb";
+import Head from "next/head";
 
 import { getAboutPageData } from "../lib/api";
 
 const About = ({ aboutPageData }) => {
   const header = aboutPageData?.myOptionsPage?.header;
   const footer = aboutPageData?.myOptionsPage?.footer;
+  const info = aboutPageData?.myOptionsPage?.info;
   return (
-    <Layout header={header} footer={footer}>
+    <Layout header={header} footer={footer} info={info}>
+      <Head>
+        <title>About | Vicbor Bags BD Limited</title>
+        <meta name="og:title" content="Vicbor Bags BD Limited" />
+        <meta property="og:type" content="text" />
+        <meta property="og:url" content="https://victorbagsbd.com/about" />
+      </Head>
       <Banner
         title={aboutPageData?.page?.title}
         image={aboutPageData?.page?.featuredImage?.node}

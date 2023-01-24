@@ -3,6 +3,7 @@ import LightGallery from "lightgallery/react";
 import { getGalleryPageData } from "../lib/api";
 import Banner from "../components/banner";
 import Breadcrumb from "../components/breadcrumb";
+import Head from "next/head";
 import Layout from "../components/layout";
 
 // import styles
@@ -18,9 +19,17 @@ const Gallery = ({ galleryPageData }) => {
   const gImgs = galleryPageData?.page?.galleryPage?.galleryImages;
   const header = galleryPageData?.myOptionsPage?.header;
   const footer = galleryPageData?.myOptionsPage?.footer;
+  const info = galleryPageData?.myOptionsPage?.info;
 
   return (
-    <Layout header={header} footer={footer}>
+    <Layout header={header} footer={footer} info={info}>
+      <Head>
+        <title>Gallery | Vicbor Bags BD Limited</title>
+        <meta name="og:title" content="Vicbor Bags BD Limited" />
+        <meta property="og:type" content="image" />
+        <meta property="og:url" content="https://victorbagsbd.com/gallery" />
+      </Head>
+
       <Banner
         title={galleryPageData?.page?.title}
         image={galleryPageData?.page?.featuredImage?.node}

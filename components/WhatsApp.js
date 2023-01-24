@@ -1,9 +1,12 @@
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
-const WhatsApp = () => {
+const WhatsApp = ({ info }) => {
   return (
-    <a href="https://wa.me/1749277075" className="whats-app">
+    <a
+      href={`https://wa.me/${info?.settings?.whatsAppNumber}`}
+      className="whats-app"
+    >
       <FaWhatsapp />
     </a>
   );
