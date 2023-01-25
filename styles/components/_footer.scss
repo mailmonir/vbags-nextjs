@@ -61,7 +61,7 @@
   &__link {
     &:link,
     &:visited {
-      color: var.$color-grey-500;
+      color: var.$color-grey-400;
       background-color: var.$color-grey-800;
       text-decoration: none;
       text-transform: uppercase;
@@ -86,7 +86,7 @@
   &__info {
     border-top: 1px solid var.$color-grey-600;
     padding-top: 2rem;
-    color: var.$color-grey-500;
+    color: var.$color-grey-400;
     text-align: center;
 
     @include mix.respond(lg) {

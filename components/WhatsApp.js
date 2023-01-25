@@ -6,6 +6,7 @@ const WhatsApp = ({ info }) => {
     <a
       href={`https://wa.me/${info?.settings?.whatsAppNumber}`}
       className="whats-app"
+      aria-label="Use whats app for online chatting"
     >
       <FaWhatsapp />
     </a>
