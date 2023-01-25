@@ -2,6 +2,7 @@
 @use "../abstracts/mixins" as mix;
 
 .categories {
+  background-color: var.$color-white;
   max-width: 150rem;
   margin: 10rem auto;
   padding-left: 2rem;

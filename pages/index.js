@@ -27,17 +27,19 @@ const Home = ({ mainPageData }) => {
           content="https://victorbagsbd.com/_next/image?url=https%3A%2F%2Fvictorbagsbd.com%2Fadmin%2Fwp-content%2Fuploads%2F2023%2F01%2Fslider-one.jpg&w=1920&q=75"
         />
       </Head>
-      <Slider slides={mainPageData?.page?.mainPage?.slides} />
-      <Categories
-        products={products}
-        heading={mainPageData?.page?.mainPage?.productsHeading}
-        wmImage={mainPageData?.page?.mainPage?.watermarkImage}
-      />
-      <About data={mainPageData?.page?.mainPage?.about} />
-      <Certifications
-        certifications={mainPageData?.page?.mainPage?.certifications}
-        heading={mainPageData?.page?.mainPage?.certificationsHeading}
-      />
+      <div className="home-page-wrapper">
+        <Slider slides={mainPageData?.page?.mainPage?.slides} />
+        <Categories
+          products={products}
+          heading={mainPageData?.page?.mainPage?.productsHeading}
+          wmImage={mainPageData?.page?.mainPage?.watermarkImage}
+        />
+        <About data={mainPageData?.page?.mainPage?.about} />
+        <Certifications
+          certifications={mainPageData?.page?.mainPage?.certifications}
+          heading={mainPageData?.page?.mainPage?.certificationsHeading}
+        />
+      </div>
     </Layout>
   );
 };

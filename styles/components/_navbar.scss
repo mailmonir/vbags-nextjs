@@ -2,6 +2,7 @@
 @use "../abstracts/mixins" as mix;
 
 .navbar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,8 +13,8 @@
   transition: all 0.5s;
   // background-image: linear-gradient(
   //   to right bottom,
-  //   rgba(var.$color-secondary, 0.9),
-  //   rgba(var.$color-secondary, 0.9)
+  //   rgba(var.$color-secondary, 0.5),
+  //   rgba(var.$color-secondary, 0.5)
   // );
 }
 
@@ -53,23 +54,6 @@
     box-shadow: unset;
     padding: unset;
   }
-
-  // .closebtn {
-  //   position: absolute;
-  //   top: 10px;
-  //   right: 20px;
-  //   font-size: 25px;
-  //   text-decoration: none;
-  //   color: var.$color-grey-200;
-  //   transition: all 0.3s;
-  //   &:hover {
-  //     color: var.$color-primary;
-  //   }
-
-  //   @include mix.respond(lg) {
-  //     display: none;
-  //   }
-  // }
 }
 
 .open {
@@ -91,7 +75,7 @@
     &:link,
     &:visited {
       text-decoration: none;
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: var.$color-grey-200;
       font-weight: 500;
       transition: all 0.3s;
@@ -100,6 +84,7 @@
       text-transform: uppercase;
       padding: 1rem 2rem;
       display: block;
+      -webkit-text-stroke: 1px rgba(var.$color-secondary, 0.8);
 
       @include mix.respond(lg) {
         padding: 1rem 2rem;

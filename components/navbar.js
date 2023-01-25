@@ -123,9 +123,9 @@ const Navbar = ({ header }) => {
         </ul>
       </div>
 
-      <button className="search">
+      <a href="/search" className="search" aria-label="Search">
         <FaSearch />
-      </button>
+      </a>
     </nav>
   );
 };

@@ -97,6 +97,7 @@ const Footer = ({ footer }) => {
                 className="footer__link-social"
                 href={footer?.socialMedia?.facebookUrl}
               >
+                Facebook
                 <FaFacebookF />
               </a>
             </li>
@@ -107,6 +108,7 @@ const Footer = ({ footer }) => {
                 className="footer__link-social"
                 href={footer?.socialMedia?.twitterUrl}
               >
+                Twitter
                 <FaTwitter />
               </a>
             </li>
@@ -117,6 +119,7 @@ const Footer = ({ footer }) => {
                 className="footer__link-social"
                 href={footer?.socialMedia?.instagramUrl}
               >
+                Instagram
                 <FaInstagram />
               </a>
             </li>
@@ -127,6 +130,7 @@ const Footer = ({ footer }) => {
                 className="footer__link-social"
                 href={footer?.socialMedia?.youtubeUrl}
               >
+                Youtube
                 <FaYoutube />
               </a>
             </li>
@@ -137,6 +141,7 @@ const Footer = ({ footer }) => {
                 className="footer__link-social"
                 href={footer?.socialMedia?.linkedinUrl}
               >
+                Linkedin
                 <FaLinkedinIn />
               </a>
             </li>
