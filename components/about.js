@@ -23,6 +23,8 @@ const About = ({ data }) => {
               className="info__image"
               width={1280}
               height={862}
+              sizes={data?.aboutUsImage?.srcSet}
+              priority
             />
           </div>
         </div>

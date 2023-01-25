@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import logow from "../public/img/logo-f-white.png";
 
-const Categories = ({ products, heading }) => {
+const Categories = ({ products, heading, wmImage }) => {
   return (
     <section className="categories">
       <div className="u-center-text u-margin-bottom-big">
@@ -14,15 +13,21 @@ const Categories = ({ products, heading }) => {
           <Link href="products" className="categories__item" key={index}>
             <Image
               src={product?.productImage?.sourceUrl}
-              alt="test"
+              alt={product?.productImage?.altText}
               className="categories__image"
               width={600}
               height={700}
+              sizes={product?.productImage?.srcSet}
+              priority
             />
             <Image
-              src={logow}
-              alt="watermark logo"
+              src={wmImage?.sourceUrl}
+              alt={wmImage?.altText}
               className="categories__watermark"
+              sizes={wmImage?.srcSet}
+              width={1691}
+              height={364}
+              priority
             />
           </Link>
         ))}

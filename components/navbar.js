@@ -40,6 +40,7 @@ const Navbar = ({ header }) => {
               alt={header?.logo?.altText}
               width={1691}
               height={364}
+              sizes={header?.logo?.srcSet}
             />
             <Image
               className="logo-white"
@@ -47,6 +48,7 @@ const Navbar = ({ header }) => {
               alt={header?.logoWhite?.altText}
               width={1691}
               height={364}
+              sizes={header?.logoWhite?.srcSet}
             />
           </>
         ) : (
@@ -56,6 +58,7 @@ const Navbar = ({ header }) => {
             alt={header?.logo?.altText}
             width={1691}
             height={364}
+            sizes={header?.logo?.srcSet}
           />
         )}
       </Link>

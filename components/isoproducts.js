@@ -69,6 +69,7 @@ const IsoProducts = ({ products }) => {
                   alt={`${product?.productImage?.altText}`}
                   width={600}
                   height={700}
+                  sizes={product?.productImage?.srcSet}
                 />
               </div>
               <div className="card__side card__side--back">

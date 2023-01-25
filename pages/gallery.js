@@ -46,8 +46,11 @@ const Gallery = ({ galleryPageData }) => {
                 alt="img1"
                 src={img.sourceUrl}
                 className="gallery__image"
-                width={1280}
-                height={862}
+                // width={1280}
+                // height={862}
+                fill
+                sizes={img.srcSet}
+                priority
               />
             </a>
           ))}

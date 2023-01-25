@@ -17,6 +17,8 @@ export default function Certifications({ certifications, heading }) {
                 className="certifications__image"
                 width={600}
                 height={400}
+                sizes={cimg?.image?.srcSet}
+                priority
               />
             </div>
           ))}

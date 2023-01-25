@@ -52,6 +52,8 @@ export default function BgSlider({ slides }) {
               className="slider-image"
               width={1920}
               height={1080}
+              sizes={slide?.slideImage?.srcSet}
+              priority
             />
             <div className="overlay">
               <div className="overlay__text-box">

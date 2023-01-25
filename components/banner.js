@@ -9,6 +9,8 @@ const Banner = ({ title, image }) => {
         width={1920}
         height={400}
         className="banner__image"
+        priority
+        sizes={image.srcSet}
       />
       <div className="banner__overlay">
         <h2 className="banner__title">{title}</h2>

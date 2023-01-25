@@ -14,6 +14,7 @@ const Home = ({ mainPageData }) => {
   const products = mainPageData?.pages?.nodes[0]?.productsPage?.products.filter(
     (item) => item.showOnFrontPage === true
   );
+
   return (
     <Layout header={header} footer={footer} info={info}>
       <Head>
@@ -30,6 +31,7 @@ const Home = ({ mainPageData }) => {
       <Categories
         products={products}
         heading={mainPageData?.page?.mainPage?.productsHeading}
+        wmImage={mainPageData?.page?.mainPage?.watermarkImage}
       />
       <About data={mainPageData?.page?.mainPage?.about} />
       <Certifications
