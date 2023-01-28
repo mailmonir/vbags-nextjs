@@ -1,12 +1,12 @@
 {
   "name": "victoria",
-  "version": "0.1.0  NODE_ENV=production node server.js",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -H test.test",
+    "dev": "next dev",
     "build": "next build",
     "lint": "next lint",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.15.1",
