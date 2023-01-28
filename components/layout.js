@@ -1,20 +1,15 @@
-import { useState, useEffect } from "react";
+
 import Head from "next/head";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import ScrollTop from "./ScrollTop";
 import WhatsApp from "./WhatsApp";
-import LoadingSpinner from "./LoadingSpinner"
+
 
 const Layout = ({ children, header, footer, info }) => {
-  const [loading, setLoading] = useState(true)
-  useEffect(() => {
-    setLoading(false)
-  }, [])
+  
   return (
-    loading ? (
-      <LoadingSpinner />
-    ) : (
+    
     <div>
       <Head>
         <link rel="icon" href="/favicon/favicon.ico" />
@@ -29,7 +24,7 @@ const Layout = ({ children, header, footer, info }) => {
       <ScrollTop />
       <WhatsApp info={info} />
     </div>
-  ));
+  );
 };
 
 export default Layout;

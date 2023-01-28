@@ -1,10 +1,16 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import LoadingSpinner from "./LoadingSpinner"
 
 export default function BgSlider({ slides }) {
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    setLoading(false)
+  }, [])
   const [sliderRef] = useKeenSlider(
     {
       loop: true,
@@ -42,6 +48,9 @@ export default function BgSlider({ slides }) {
   );
 
   return (
+    loading ? (
+      <LoadingSpinner />
+    ) : (
     <div ref={sliderRef} className="keen-slider">
       {slides &&
         slides.map((slide, index) => (
@@ -78,5 +87,5 @@ export default function BgSlider({ slides }) {
           </div>
         ))}
     </div>
-  );
+  ));
 }
