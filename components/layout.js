@@ -15,7 +15,7 @@ const Layout = ({ children, header, footer, info }) => {
         <link rel="icon" href="/favicon/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Victor Leather Bags Factory Ltd. is a Bangladeshi manufacturing and exporting unit of backpack, laptop bag, hiking bag, luggage and ladies bag."
         />
       </Head>
       <Navbar header={header} />

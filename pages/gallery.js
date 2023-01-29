@@ -43,11 +43,9 @@ const Gallery = ({ galleryPageData }) => {
           {gImgs.map((img, index) => (
             <a href={img.sourceUrl} key={index}>
               <Image
-                alt="img1"
+                alt={img.altText}
                 src={img.sourceUrl}
                 className="gallery__image"
-                // width={1280}
-                // height={862}
                 fill
                 sizes={img.srcSet}
                 priority
