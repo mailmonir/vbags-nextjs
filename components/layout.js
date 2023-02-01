@@ -1,15 +1,15 @@
-
+import React from 'react';
 import Head from "next/head";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import ScrollTop from "./ScrollTop";
 import WhatsApp from "./WhatsApp";
+import Modal from '../components/modal';
 
 
 const Layout = ({ children, header, footer, info }) => {
   
   return (
-    
     <div>
       <Head>
         <link rel="icon" href="/favicon/favicon.ico" />
@@ -24,6 +24,7 @@ const Layout = ({ children, header, footer, info }) => {
       <ScrollTop />
       <WhatsApp info={info} />
     </div>
+
   );
 };
 

@@ -4,11 +4,15 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { FaSearch } from "react-icons/fa";
+import { createPortal } from 'react-dom';
+import Modal from '../components/modal'
 
 const Navbar = ({ header }) => {
   const [navUp, setNavUp] = React.useState(false);
   const [rotateBars, setRotateBars] = React.useState(false);
   const [openMenu, setOpenMenu] = React.useState(false);
+
+  const [showModal, setShowModal] = React.useState(false);
 
   const router = useRouter();
 
@@ -28,6 +32,8 @@ const Navbar = ({ header }) => {
     setRotateBars((state) => !state);
     setOpenMenu((state) => !state);
   };
+
+
 
   return (
     <nav className={`navbar ${navUp ? "float-nav" : ""}`}>
@@ -122,10 +128,15 @@ const Navbar = ({ header }) => {
           </li>
         </ul>
       </div>
-
-      <a href="/search" className="search" aria-label="Search">
-        <FaSearch />
-      </a>
+      <>
+        <button onClick={() => setShowModal(true)}className="search" aria-label="Search">
+          <FaSearch />
+        </button>
+        {showModal && createPortal(
+          <Modal onClose={() => setShowModal(false)} />,
+          document.body
+        )}
+      </>
     </nav>
   );
 };
