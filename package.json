@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node ./lib/build-search.js",
     "lint": "next lint",
     "start": "NODE_ENV=production node server.js"
   },
