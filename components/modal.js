@@ -1,6 +1,5 @@
 import algoliasearch from "algoliasearch/lite";
-// import Search from './Search'
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
+import { InstantSearch } from 'react-instantsearch-dom';
 import CustomSearchBox from "./customSearchBox";
 import CustomHits from "./customHits";
 
@@ -10,17 +9,13 @@ const Modal = ({onClose}) => {
 
   return (
     <div className={`modal`}>
-        <span class="close" onClick={onClose}>&times;</span>
-        <div className="container">
-            <InstantSearch searchClient={searchClient} indexName="victorbags">
-                {/* <SearchBox /> */}
-                <CustomSearchBox />
-                {/* <Hits /> */}
-                <CustomHits />
-            </InstantSearch>
-            {/* <Search /> */}
-        </div>
-      
+      <span className="close" onClick={onClose}>&times;</span>
+      <div className="container">
+        <InstantSearch searchClient={searchClient} indexName="victorbags">
+          <CustomSearchBox />
+          <CustomHits />
+        </InstantSearch>
+      </div>
     </div>
   )
 }

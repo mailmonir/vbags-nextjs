@@ -15,9 +15,7 @@ function CustomHits({ searchState, searchResults }) {
       )}
       {searchResults?.hits.length > 0 && validQuery && (
         <main>
-          {/* {searchResults.hits.map((hit) => ( */}
-            <IsoProducts products={searchResults.hits} />
-          {/* ))} */}
+            <IsoProducts products={searchResults.hits} cname="modal-cards" />
         </main>
       )}
     </>

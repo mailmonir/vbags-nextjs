@@ -30,7 +30,7 @@ const Products = ({ productsPageData }) => {
       />
       <Breadcrumb bcitems={[{ text: "Products", link: "" }]} />
       <main className="products u-offset-x">
-        <IsoProducts products={products} />
+        <IsoProducts products={products} cname="cards" />
       </main>
     </Layout>
   );

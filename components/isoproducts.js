@@ -2,7 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Isotope from "isotope-layout";
 
-const IsoProducts = ({ products }) => {
+const IsoProducts = ({ products, cname }) => {
+  console.log(cname)
   const categoriesSet = new Set();
   products.forEach((product) => {
     categoriesSet.add(product.productName);
@@ -12,12 +13,19 @@ const IsoProducts = ({ products }) => {
   const [filterKey, setFilterKey] = React.useState("*");
 
   React.useEffect(() => {
-    isotope.current = new Isotope(".cards", {
+    isotope.current = new Isotope(`.${cname}`, {
       itemSelector: ".card",
       layoutMode: "fitRows",
     });
     return () => isotope.current.destroy();
-  }, []);
+  }, [cname]);
+  // React.useEffect(() => {
+  //   isotope.current = new Isotope(".search-cards", {
+  //     itemSelector: ".card",
+  //     layoutMode: "fitRows",
+  //   });
+  //   return () => isotope.current.destroy();
+  // }, []);
 
   React.useEffect(() => {
     filterKey === "*"
@@ -53,7 +61,7 @@ const IsoProducts = ({ products }) => {
           ))}
       </ul>
 
-      <div className="cards">
+      <div className={`${cname}`}>
         {products &&
           products.map((product, index) => (
             <div
