@@ -28,14 +28,16 @@ const algolia =  async (req, res) => {
     
         const client = algoliaSearch(process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID, process.env.ALGOLIA_ADMIN_KEY)
         const index = client.initIndex('victorbags')
+
+        index.clearObjects().then(() => {
+          index.saveObjects(transformed)
+        });
     
-        const algoliaResponse = await index.saveObjects(transformed)
 
         
         res.status(200).json({
             status: "success",
             message: "Data sending to algolia successful",
-            algoliaResponse
         });
 
       } catch (error) {
