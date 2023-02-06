@@ -49,9 +49,11 @@ export default function BgSlider({ slides }) {
     ]
   );
 
-  return loading ? (
-    <LoadingSpinner />
-  ) : (
+  // return loading ? (
+  //   <LoadingSpinner />
+  // ) : (
+
+  return (
     <div ref={sliderRef} className="keen-slider">
       {slides &&
         slides.map((slide, index) => (
@@ -61,7 +63,7 @@ export default function BgSlider({ slides }) {
               alt={slide?.slideImage?.altText}
               className="slider-image"
               fill
-              quality={100}
+              sizes="100vw"
               priority={index === 0}
             />
             <div className="overlay">
@@ -88,4 +90,5 @@ export default function BgSlider({ slides }) {
         ))}
     </div>
   );
+  // );
 }
