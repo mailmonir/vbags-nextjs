@@ -22,7 +22,6 @@ const Footer = ({ footer }) => {
             className="footer__logo"
             width={1691}
             height={364}
-            sizes={footer?.footerLogo?.srcSet}
           />
         </Link>
       </div>

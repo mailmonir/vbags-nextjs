@@ -4,6 +4,8 @@ import Breadcrumb from "../components/breadcrumb";
 import Head from "next/head";
 
 import { getAboutPageData } from "../lib/api";
+import { Inter } from "@next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 
 const About = ({ aboutPageData }) => {
   const header = aboutPageData?.myOptionsPage?.header;
@@ -25,7 +27,9 @@ const About = ({ aboutPageData }) => {
       <main className="about u-offset-x">
         <div className="story">
           <div className="story__text">
-            <h3 className="heading-secondary u-margin-bottom-small">
+            <h3
+              className={`heading-secondary u-margin-bottom-small ${inter.className}`}
+            >
               Our Story
             </h3>
             <div
@@ -37,7 +41,9 @@ const About = ({ aboutPageData }) => {
         </div>
         <div className="story">
           <div className="story__text">
-            <h3 className="heading-secondary u-margin-bottom-small">
+            <h3
+              className={`heading-secondary u-margin-bottom-small ${inter.className}`}
+            >
               Speech from MD
             </h3>
             <div

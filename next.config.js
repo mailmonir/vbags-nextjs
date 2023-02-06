@@ -1,21 +1,22 @@
 /** @type {import('next').NextConfig} */
-const webpack = require("webpack");
+
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["victorbagsbd.com"],
-  },
-
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // config.plugins.push(
-    //   new webpack.ProvidePlugin({
-    //     $: "jquery",
-    //     jQuery: "jquery",
-    //     "window.jQuery": "jquery",
-    //   })
-    // );
-    return config;
+    formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "victorbagsbd.com",
+        port: "",
+        pathname: "/admin/wp-content/uploads/**",
+      },
+    ],
   },
 };
 
-module.exports = nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);

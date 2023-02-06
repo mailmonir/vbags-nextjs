@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Inter } from "@next/font/google";
+const inter = Inter();
 
 const Banner = ({ title, image }) => {
   return (
@@ -10,10 +12,9 @@ const Banner = ({ title, image }) => {
         height={400}
         className="banner__image"
         priority
-        sizes={image.srcSet}
       />
       <div className="banner__overlay">
-        <h2 className="banner__title">{title}</h2>
+        <h2 className={`banner__title ${inter.className}`}>{title}</h2>
       </div>
     </div>
   );

@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Inter } from "@next/font/google";
+const inter = Inter();
 
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import LoadingSpinner from "./LoadingSpinner"
+import LoadingSpinner from "./LoadingSpinner";
 
 export default function BgSlider({ slides }) {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(false)
-  }, [])
+    setLoading(false);
+  }, []);
   const [sliderRef] = useKeenSlider(
     {
       loop: true,
@@ -47,10 +49,9 @@ export default function BgSlider({ slides }) {
     ]
   );
 
-  return (
-    loading ? (
-      <LoadingSpinner />
-    ) : (
+  return loading ? (
+    <LoadingSpinner />
+  ) : (
     <div ref={sliderRef} className="keen-slider">
       {slides &&
         slides.map((slide, index) => (
@@ -59,14 +60,13 @@ export default function BgSlider({ slides }) {
               src={slide?.slideImage?.sourceUrl}
               alt={slide?.slideImage?.altText}
               className="slider-image"
-              width={1920}
-              height={1080}
-              sizes={slide?.slideImage?.srcSet}
-              priority
+              fill
+              quality={100}
+              priority={index === 0}
             />
             <div className="overlay">
               <div className="overlay__text-box">
-                <h1 className="heading-primary">
+                <h1 className={`heading-primary ${inter.className}`}>
                   <span className="heading-primary--main">
                     {slide?.mainHeading}
                   </span>
@@ -87,5 +87,5 @@ export default function BgSlider({ slides }) {
           </div>
         ))}
     </div>
-  ));
+  );
 }

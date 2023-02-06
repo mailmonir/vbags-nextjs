@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { Inter } from "@next/font/google";
+const inter = Inter();
 
 const ContactForm = ({ settings }) => {
   const [responseText, setResponseText] = useState("");
@@ -73,7 +75,9 @@ const ContactForm = ({ settings }) => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="u-margin-bottom-medium">
-          <h2 className="heading-tertiary">Submit your inquiry</h2>
+          <h2 className={`heading-tertiary ${inter.className}`}>
+            Submit your inquiry
+          </h2>
         </div>
 
         <div className="form__group">

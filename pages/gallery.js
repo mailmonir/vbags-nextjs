@@ -47,8 +47,6 @@ const Gallery = ({ galleryPageData }) => {
                 src={img.sourceUrl}
                 className="gallery__image"
                 fill
-                sizes={img.srcSet}
-                priority
               />
             </a>
           ))}

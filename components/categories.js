@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Inter } from "@next/font/google";
+const inter = Inter();
 
 const Categories = ({ products, heading, wmImage }) => {
   return (
     <section className="categories">
       <div className="u-center-text u-margin-bottom-big">
-        <h2 className="heading-secondary">{heading}</h2>
+        <h2 className={`heading-secondary ${inter.className}`}>{heading}</h2>
       </div>
 
       <div className="categories__items">
@@ -17,17 +19,13 @@ const Categories = ({ products, heading, wmImage }) => {
               className="categories__image"
               width={600}
               height={700}
-              sizes={product?.productImage?.srcSet}
-              priority
             />
             <Image
               src={wmImage?.sourceUrl}
               alt={wmImage?.altText}
               className="categories__watermark"
-              sizes={wmImage?.srcSet}
               width={1691}
               height={364}
-              priority
             />
           </Link>
         ))}

@@ -6,6 +6,8 @@ import GMap from "../components/gmap";
 import Head from "next/head";
 
 import { getContactPageData } from "../lib/api";
+import { Inter } from "@next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 
 const Contact = ({ contactPageData }) => {
   const data = contactPageData?.page?.contactPage;
@@ -52,7 +54,9 @@ const Contact = ({ contactPageData }) => {
       />
       <Breadcrumb bcitems={[{ text: "Contact", link: "" }]} />
       <main className="u-offset-x contact">
-        <h2 className="heading-secondary">{data?.contactHeading}</h2>
+        <h2 className={`heading-secondary ${inter.className}`}>
+          {data?.contactHeading}
+        </h2>
         <div
           className="contact__text"
           dangerouslySetInnerHTML={{
@@ -86,7 +90,9 @@ const Contact = ({ contactPageData }) => {
         </div>
 
         <div className="contact-form u-margin-top-huge">
-          <h2 className="heading-secondary">{data?.contactFormHeading}</h2>
+          <h2 className={`heading-secondary ${inter.className}`}>
+            {data?.contactFormHeading}
+          </h2>
           <div
             className="contact__text"
             dangerouslySetInnerHTML={{
@@ -111,7 +117,10 @@ const Contact = ({ contactPageData }) => {
           </div>
         </div>
         <div className="gmap u-margin-top-huge" id="gmap">
-          <h2 className="heading-secondary" style={{ marginBottom: "2rem" }}>
+          <h2
+            className={`heading-secondary ${inter.className}`}
+            style={{ marginBottom: "2rem" }}
+          >
             {data.locationHeading}
           </h2>
           <GMap

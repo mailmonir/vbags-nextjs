@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { FaSearch } from "react-icons/fa";
-import { createPortal } from 'react-dom';
-import Modal from '../components/modal'
+import { createPortal } from "react-dom";
+import Modal from "../components/modal";
 
 const Navbar = ({ header }) => {
   const [navUp, setNavUp] = React.useState(false);
@@ -33,8 +33,6 @@ const Navbar = ({ header }) => {
     setOpenMenu((state) => !state);
   };
 
-
-
   return (
     <nav className={`navbar ${navUp ? "float-nav" : ""}`}>
       <Link href="/">
@@ -46,7 +44,6 @@ const Navbar = ({ header }) => {
               alt={header?.logo?.altText}
               width={1691}
               height={364}
-              sizes={header?.logo?.srcSet}
             />
             <Image
               className="logo-white"
@@ -54,7 +51,6 @@ const Navbar = ({ header }) => {
               alt={header?.logoWhite?.altText}
               width={1691}
               height={364}
-              sizes={header?.logoWhite?.srcSet}
             />
           </>
         ) : (
@@ -64,7 +60,6 @@ const Navbar = ({ header }) => {
             alt={header?.logo?.altText}
             width={1691}
             height={364}
-            sizes={header?.logo?.srcSet}
           />
         )}
       </Link>
@@ -129,13 +124,18 @@ const Navbar = ({ header }) => {
         </ul>
       </div>
       <>
-        <button onClick={() => setShowModal(true)}className="search" aria-label="Search">
+        <button
+          onClick={() => setShowModal(true)}
+          className="search"
+          aria-label="Search"
+        >
           <FaSearch />
         </button>
-        {showModal && createPortal(
-          <Modal onClose={() => setShowModal(false)} />,
-          document.body
-        )}
+        {showModal &&
+          createPortal(
+            <Modal onClose={() => setShowModal(false)} />,
+            document.body
+          )}
       </>
     </nav>
   );
