@@ -51,12 +51,12 @@ const Footer = ({ footer }) => {
             </li>
             <li className="footer__item">
               <Link
-                href="gallery"
+                href="factory"
                 className={`footer__link ${
-                  router.pathname == "/gallery" ? "active" : ""
+                  router.pathname == "/factory" ? "active" : ""
                 }`}
               >
-                Gallery
+                Factory
               </Link>
             </li>
             <li className="footer__item">

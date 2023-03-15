@@ -20,13 +20,13 @@ const Categories = ({ products, heading, wmImage }) => {
               width={600}
               height={700}
             />
-            <Image
+            {/* <Image
               src={wmImage?.sourceUrl}
               alt={wmImage?.altText}
               className="categories__watermark"
               width={1691}
               height={364}
-            />
+            /> */}
           </Link>
         ))}
       </div>

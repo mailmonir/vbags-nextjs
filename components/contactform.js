@@ -40,7 +40,7 @@ const ContactForm = ({ settings }) => {
       token,
     };
 
-    fetch("/api/sendgrid", {
+    fetch("/api/contactform", {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -50,6 +50,7 @@ const ContactForm = ({ settings }) => {
     }).then((res) => {
       setLoading(false);
       console.log("Response received");
+      console.log(res);
       if (res.status === 200) {
         setResponseText(
           `Your message is successfully submitted. We'll contact you shortly.`

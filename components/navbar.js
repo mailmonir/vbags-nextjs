@@ -93,12 +93,12 @@ const Navbar = ({ header }) => {
           </li>
           <li className="nav__list-item">
             <Link
-              href="gallery"
+              href="factory"
               className={`nav__link ${
-                router.pathname == "/gallery" ? "active" : ""
+                router.pathname == "/factory" ? "active" : ""
               }`}
             >
-              Gallery
+              Factory
             </Link>
           </li>
           <li className="nav__list-item">

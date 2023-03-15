@@ -45,7 +45,7 @@ body {
   color: #fff;
   text-transform: uppercase;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   margin-bottom: 6rem;
   font-family: Inter, "sans-serif";
 }
@@ -56,26 +56,26 @@ body {
   font-weight: 400;
   letter-spacing: 1.1rem;
   -webkit-animation-name: moveInLeft;
-          animation-name: moveInLeft;
+  animation-name: moveInLeft;
   -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
   -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-delay: 3s;
   -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
+  animation-iteration-count: 3;
 }
 @media only screen and (min-width: 56.25em) {
   .heading-primary--main,
-.address-box h1--main {
+  .address-box h1--main {
     font-size: 4rem;
     letter-spacing: 1.3rem;
   }
 }
 @media only screen and (min-width: 75em) {
   .heading-primary--main,
-.address-box h1--main {
+  .address-box h1--main {
     font-size: 6rem;
     letter-spacing: 1.5rem;
   }
@@ -87,18 +87,18 @@ body {
   font-weight: 700;
   letter-spacing: 1.02rem;
   -webkit-animation: moveInRight 1s ease-out;
-          animation: moveInRight 1s ease-out;
+  animation: moveInRight 1s ease-out;
 }
 @media only screen and (min-width: 56.25em) {
   .heading-primary--sub,
-.address-box h1--sub {
+  .address-box h1--sub {
     font-size: 1.7rem;
     letter-spacing: 1.05rem;
   }
 }
 @media only screen and (min-width: 75em) {
   .heading-primary--sub,
-.address-box h1--sub {
+  .address-box h1--sub {
     font-size: 2rem;
     letter-spacing: 1.5rem;
   }
@@ -119,13 +119,13 @@ body {
 }
 @media only screen and (min-width: 56.25em) {
   .heading-secondary,
-.address-box h2 {
+  .address-box h2 {
     font-size: 3rem;
   }
 }
 @media only screen and (min-width: 75em) {
   .heading-secondary,
-.address-box h2 {
+  .address-box h2 {
     font-size: 3.5rem;
   }
 }
@@ -218,7 +218,7 @@ body {
 .lspinner span svg {
   transform-origin: center;
   -webkit-animation: spin 0.75s linear infinite;
-          animation: spin 0.75s linear infinite;
+  animation: spin 0.75s linear infinite;
 }
 
 .hidden {
@@ -337,7 +337,7 @@ body {
 .lspinner span svg {
   transform-origin: center;
   -webkit-animation: spin 0.75s linear infinite;
-          animation: spin 0.75s linear infinite;
+  animation: spin 0.75s linear infinite;
 }
 
 .about-section {
@@ -419,7 +419,7 @@ body {
 .whats-app {
   position: fixed;
   left: 2rem;
-  bottom: 2rem;
+  bottom: 8rem;
   font-size: 4rem;
   width: 5rem;
   height: 5rem;
@@ -447,11 +447,15 @@ body {
   height: 100%;
   display: block;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .overlay {
-  background-image: linear-gradient(to right bottom, rgba(2, 11, 48, 0.9), rgba(2, 11, 48, 0.9));
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(2, 11, 48, 0.9),
+    rgba(2, 11, 48, 0.9)
+  );
   position: absolute;
   left: 0;
   top: 0;
@@ -489,7 +493,9 @@ body {
   text-align: center;
 }
 
-.btn, .btn:link, .btn:visited {
+.btn,
+.btn:link,
+.btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -510,7 +516,8 @@ body {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
-.btn:active, .btn:focus {
+.btn:active,
+.btn:focus {
   outline: none;
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
@@ -546,12 +553,13 @@ body {
 }
 .btn--animated {
   -webkit-animation: moveInBottom 0.5s ease-out 0.75s;
-          animation: moveInBottom 0.5s ease-out 0.75s;
+  animation: moveInBottom 0.5s ease-out 0.75s;
   -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
 }
 
-.btn-text:link, .btn-text:visited {
+.btn-text:link,
+.btn-text:visited {
   font-size: 1.6rem;
   color: #eb2f64;
   display: inline-block;
@@ -635,7 +643,9 @@ body {
     display: flex;
   }
 }
-.nav__link, .nav__link:link, .nav__link:visited {
+.nav__link,
+.nav__link:link,
+.nav__link:visited {
   text-decoration: none;
   font-size: 2rem;
   color: #e2e8f0;
@@ -649,11 +659,14 @@ body {
   -webkit-text-stroke: 1px rgba(2, 11, 48, 0.8);
 }
 @media only screen and (min-width: 75em) {
-  .nav__link, .nav__link:link, .nav__link:visited {
+  .nav__link,
+  .nav__link:link,
+  .nav__link:visited {
     padding: 1rem 2rem;
   }
 }
-.nav__link:hover, .nav__link:active {
+.nav__link:hover,
+.nav__link:active {
   color: #eb2f64;
 }
 .nav__link.active {
@@ -663,13 +676,16 @@ body {
   position: relative;
   margin-top: 3.5rem;
 }
-.nav__icon, .nav__icon::before, .nav__icon::after {
+.nav__icon,
+.nav__icon::before,
+.nav__icon::after {
   width: 3rem;
   height: 2px;
   background-color: #e2e8f0;
   display: inline-block;
 }
-.nav__icon::before, .nav__icon::after {
+.nav__icon::before,
+.nav__icon::after {
   content: "";
   position: absolute;
   left: 0;
@@ -731,7 +747,7 @@ body {
 }
 @media only screen and (min-width: 75em) {
   .float-nav .nav__link,
-.float-nav .search {
+  .float-nav .search {
     color: #020b30;
   }
 }
@@ -758,7 +774,11 @@ body {
 }
 
 .footer {
-  background-image: linear-gradient(to right bottom, rgba(2, 11, 48, 0.9), rgba(2, 11, 48, 0.9));
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(2, 11, 48, 0.9),
+    rgba(2, 11, 48, 0.9)
+  );
 }
 .footer__logobox {
   display: flex;
@@ -811,7 +831,8 @@ body {
     margin-right: 1.5rem;
   }
 }
-.footer__link:link, .footer__link:visited {
+.footer__link:link,
+.footer__link:visited {
   color: #94a3b8;
   background-color: #1e293b;
   text-decoration: none;
@@ -819,7 +840,8 @@ body {
   display: inline-block;
   transition: all 0.2s;
 }
-.footer__link:hover, .footer__link:active {
+.footer__link:hover,
+.footer__link:active {
   color: #eb2f64;
   box-shadow: 0 0.5rem 1rem rgba(100, 116, 139, 0.4);
   transform: rotate(5deg) scale(1.3);
@@ -873,7 +895,9 @@ body {
 .footer__item-social:not(:last-child) {
   margin-right: 1.5rem;
 }
-.footer__link-social, .footer__link-social:link, .footer__link-social:visited {
+.footer__link-social,
+.footer__link-social:link,
+.footer__link-social:visited {
   text-indent: -9999px;
   font-size: 1.4rem;
   display: inline-block;
@@ -888,7 +912,8 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
-.footer__link-social:hover, .footer__link-social:active {
+.footer__link-social:hover,
+.footer__link-social:active {
   opacity: 0.7;
 }
 
@@ -1037,7 +1062,7 @@ body {
   height: auto;
   display: block;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .card {
@@ -1179,7 +1204,11 @@ body {
   height: auto;
 }
 .banner__overlay {
-  background-image: linear-gradient(to right bottom, rgba(2, 11, 48, 0.9), rgba(2, 11, 48, 0.9));
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(2, 11, 48, 0.9),
+    rgba(2, 11, 48, 0.9)
+  );
   position: absolute;
   left: 0;
   top: 0;
@@ -1465,4 +1494,4 @@ body {
 .container {
   max-width: 140rem;
   margin: 10rem auto;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */

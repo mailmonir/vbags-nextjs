@@ -44,7 +44,7 @@ const About = ({ aboutPageData }) => {
             <h3
               className={`heading-secondary u-margin-bottom-small ${inter.className}`}
             >
-              Speech from MD
+              More From Us
             </h3>
             <div
               dangerouslySetInnerHTML={{
