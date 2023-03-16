@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { Inter } from "@next/font/google";
+import axios from "axios";
 const inter = Inter();
 
 const ContactForm = ({ settings }) => {
@@ -26,13 +27,13 @@ const ContactForm = ({ settings }) => {
     setLoading(true);
     console.log("Sending...");
 
-    // if (!token) {
-    //   setCaptchaSolved(false);
-    //   setLoading(false);
-    //   return;
-    // } else {
-    //   setCaptchaSolved(true);
-    // }
+    if (!token) {
+      setCaptchaSolved(false);
+      setLoading(false);
+      return;
+    } else {
+      setCaptchaSolved(true);
+    }
 
     const data = {
       formData,
@@ -40,14 +41,7 @@ const ContactForm = ({ settings }) => {
       token,
     };
 
-    fetch("/api/contactform", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
+    axios.post("/api/contactform", data).then((res) => {
       setLoading(false);
       console.log("Response received");
       console.log(res);
@@ -56,13 +50,37 @@ const ContactForm = ({ settings }) => {
           `Your message is successfully submitted. We'll contact you shortly.`
         );
         reset();
-        // captchaRef.current.resetCaptcha();
+        captchaRef.current.resetCaptcha();
       } else {
         setResponseText(
           "There was a problem sending mail. Please try again later."
         );
       }
     });
+
+    // fetch("/api/contactform", {
+    //   method: "POST",
+    //   headers: {
+    //     Accept: "application/json, text/plain, */*",
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // }).then((res) => {
+    //   setLoading(false);
+    //   console.log("Response received");
+    //   console.log(res);
+    //   if (res.status === 200) {
+    //     setResponseText(
+    //       `Your message is successfully submitted. We'll contact you shortly.`
+    //     );
+    //     reset();
+    //     // captchaRef.current.resetCaptcha();
+    //   } else {
+    //     setResponseText(
+    //       "There was a problem sending mail. Please try again later."
+    //     );
+    //   }
+    // });
   };
 
   return (
@@ -160,7 +178,7 @@ const ContactForm = ({ settings }) => {
           </label>
         </div>
         <div className="form__group">
-          {/* {!captchaSolved && (
+          {!captchaSolved && (
             <span className="form__validation">
               Please verify that you are a human
             </span>
@@ -170,7 +188,7 @@ const ContactForm = ({ settings }) => {
             sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
             onVerify={setToken}
             ref={captchaRef}
-          /> */}
+          />
         </div>
 
         <div className="form__group">
