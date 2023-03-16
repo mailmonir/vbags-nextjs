@@ -67,7 +67,18 @@ const ContactForm = ({ settings }) => {
 
   return (
     <div className="book__form">
-      {responseText && <p className="form__submitted">{responseText}</p>}
+      {responseText && (
+        <p
+          className="form__submitted"
+          style={
+            responseText.startsWith("Your")
+              ? { color: "green" }
+              : { color: "#eb2f64" }
+          }
+        >
+          {responseText}
+        </p>
+      )}
 
       <form
         action="#"
