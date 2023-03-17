@@ -1,5 +1,5 @@
 @use "../abstracts/mixins" as mix;
-@use '../abstracts/variables' as var;
+@use "../abstracts/variables" as var;
 
 .u-center-text {
   text-align: center !important;
@@ -67,4 +67,8 @@
 }
 .show {
   display: block;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
 }

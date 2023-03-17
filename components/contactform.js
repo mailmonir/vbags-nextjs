@@ -1,16 +1,15 @@
-import React, { useState, useRef } from "react";
-import { useForm } from "react-hook-form";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import React, { useState, useCallback } from "react";
+import { useReCaptcha } from "next-recaptcha-v3";
 import { Inter } from "@next/font/google";
+import { useForm } from "react-hook-form";
 import axios from "axios";
 const inter = Inter();
 
 const ContactForm = ({ settings }) => {
   const [responseText, setResponseText] = useState("");
   const [loading, setLoading] = useState(false);
-  const [token, setToken] = useState(null);
-  const [captchaSolved, setCaptchaSolved] = useState(true);
-  const captchaRef = useRef(null);
+
+  const { executeRecaptcha } = useReCaptcha();
 
   const {
     register,
@@ -19,21 +18,11 @@ const ContactForm = ({ settings }) => {
     formState: { errors },
   } = useForm();
 
-  const onLoad = () => {
-    captchaRef.current.execute();
-  };
-
   const onSubmit = async (formData) => {
     setLoading(true);
     console.log("Sending...");
 
-    if (!token) {
-      setCaptchaSolved(false);
-      setLoading(false);
-      return;
-    } else {
-      setCaptchaSolved(true);
-    }
+    const token = await executeRecaptcha("form_submit");
 
     const data = {
       formData,
@@ -50,37 +39,12 @@ const ContactForm = ({ settings }) => {
           `Your message is successfully submitted. We'll contact you shortly.`
         );
         reset();
-        captchaRef.current.resetCaptcha();
       } else {
         setResponseText(
           "There was a problem sending mail. Please try again later."
         );
       }
     });
-
-    // fetch("/api/contactform", {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json, text/plain, */*",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // }).then((res) => {
-    //   setLoading(false);
-    //   console.log("Response received");
-    //   console.log(res);
-    //   if (res.status === 200) {
-    //     setResponseText(
-    //       `Your message is successfully submitted. We'll contact you shortly.`
-    //     );
-    //     reset();
-    //     // captchaRef.current.resetCaptcha();
-    //   } else {
-    //     setResponseText(
-    //       "There was a problem sending mail. Please try again later."
-    //     );
-    //   }
-    // });
   };
 
   return (
@@ -177,19 +141,7 @@ const ContactForm = ({ settings }) => {
             Message
           </label>
         </div>
-        <div className="form__group">
-          {!captchaSolved && (
-            <span className="form__validation">
-              Please verify that you are a human
-            </span>
-          )}
-
-          <HCaptcha
-            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
-            onVerify={setToken}
-            ref={captchaRef}
-          />
-        </div>
+        <div className="form__group"></div>
 
         <div className="form__group">
           <button className="btn btn--red" type="submit" disabled={loading}>

@@ -1,10 +1,12 @@
 import axios from "axios";
+
 async function sendEmail(req, res) {
+  console.log(req.body);
   if (req.method === "POST") {
     const { data } = await axios.post(
-      "https://hcaptcha.com/siteverify",
+      "https://www.google.com/recaptcha/api/siteverify",
       {
-        secret: process.env.HCAPTCHA_SECRET_KEY,
+        secret: process.env.CAPTCHA_SECRET_KEY,
         response: req.body.token,
       },
       {
@@ -14,7 +16,7 @@ async function sendEmail(req, res) {
       }
     );
 
-    if (data.success === true) {
+    if (data.score >= 0.5) {
       let nodemailer = require("nodemailer");
       const transporter = nodemailer.createTransport({
         port: 465,
