@@ -24,9 +24,9 @@ body {
     font-weight: 400;
     letter-spacing: 1.1rem;
 
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
+    // animation-name: moveInLeft;
+    // animation-duration: 1s;
+    // animation-timing-function: ease-out;
 
     @include mix.respond(md) {
       font-size: 4rem;

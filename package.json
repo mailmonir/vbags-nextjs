@@ -20,6 +20,7 @@
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
     "filterizr": "^2.2.4",
+    "heroku-ssl-redirect": "^0.1.1",
     "isotope-layout": "^3.0.6",
     "keen-slider": "^6.8.5",
     "lightgallery": "^2.7.0",
