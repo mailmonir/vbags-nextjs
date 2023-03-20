@@ -34,10 +34,10 @@
   }
 
   .heading-primary {
-    display: none;
-    @include mix.respond(md) {
-      display: block;
-    }
+    // display: none;
+    // @include mix.respond(md) {
+    display: block;
+    // }
   }
 
   .heading-primary--main {
@@ -52,5 +52,7 @@
 
   &__text-box {
     text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }

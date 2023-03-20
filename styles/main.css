@@ -55,6 +55,18 @@ body {
   font-size: 3rem;
   font-weight: 400;
   letter-spacing: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -webkit-hyphens: auto;
+  hyphens: auto;
   animation-delay: 3s;
   animation-iteration-count: 3;
 }
@@ -417,12 +429,7 @@ body {
   }
 }
 .overlay .heading-primary {
-  display: none;
-}
-@media only screen and (min-width: 56.25em) {
-  .overlay .heading-primary {
-    display: block;
-  }
+  display: block;
 }
 .overlay .heading-primary--main {
   max-width: 120rem;
@@ -434,6 +441,8 @@ body {
 }
 .overlay__text-box {
   text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .btn, .btn:link, .btn:visited {
