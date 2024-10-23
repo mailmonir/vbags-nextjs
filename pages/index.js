@@ -19,7 +19,7 @@ const Home = ({ mainPageData }) => {
     <Layout header={header} footer={footer} info={info}>
       <Head>
         <title>Home | Victor Bags BD Limited</title>
-        <meta name="og:title" content="Vicbor Bags BD Limited" />
+        <meta name="og:title" content="Victor Bags BD Limited" />
         <meta property="og:type" content="image" />
         <meta property="og:url" content="https://victorbagsbd.com/" />
         <meta
